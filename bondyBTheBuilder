@@ -1,0 +1,35 @@
+/*********************************************************************
+ Author    : Belle Bondy
+ Course    : COP3804 Intermediate Java
+ Professor : Michael Robinson 
+ Program # : COP3804pgm4b_4
+             { This class extends Sub2, which inherits from bondyBSuperPgm4.
+               This class demonstrates method inheritance and calls all three
+               methods from the super class, then displays "I am TheBuilder". }
+
+ Due Date  : 07/25/2025 
+
+
+ Certification: 
+ I hereby certify that this work is my own and none of it is the work of any other person. 
+
+ ..........{ Belle Bondy }..........
+*********************************************************************/
+
+
+public class bondyBTheBuilder extends bondyBSub2
+{
+    // This method demonstrates calling all inherited methods from the super class
+    public void showBuilderStuff()
+    {
+
+        // Calling all inherited super class methods
+        method1( 42 );
+        method2( "Hello", "World" );
+        method3();
+
+        System.out.printf( "%s\n", "I am TheBuilder" );
+
+    } // End of public void showBuilderStuff()
+
+} // End of public class bondyBTheBuilder extends Sub2
