@@ -1,0 +1,226 @@
+/*********************************************************************
+ Author    : Belle Bondy
+ Course    : COP3804 Intermediate Java
+ Professor : Michael Robinson 
+ Program # : COP3804pgm4b_4
+             { This is the main class }
+
+ Due Date  : 07/25/2025 
+
+
+ Certification: 
+ I hereby certify that this work is my own and none of it is the work of any other person. 
+
+ ..........{ Belle Bondy }..........
+*********************************************************************/
+
+public class bondyBTheDriverPgm4 extends bondyBOverloader
+{
+
+    public static void main( String[] args )
+    {
+
+        System.out.printf( "\n\n%s\n", "----- Polymorphism Section -----" );
+
+        // Creating objects from each class
+        bondyBSuperPgm4 objSuper = new bondyBSuperPgm4();
+        bondyBSub1 objSub1 = new bondyBSub1();
+        bondyBSub2 objSub2 = new bondyBSub2();
+        bondyBSub3 objSub3 = new bondyBSub3();
+        bondyBTheBuilder objBuilder = new bondyBTheBuilder();
+        bondyBOverloader objOverloader = new bondyBOverloader();
+
+        // Call methods from super class
+        objSuper.method1( 100 );
+        objSuper.method2( "Super", "Class" );
+        objSuper.method3();
+        System.out.printf( "\n" );
+
+        // Calling from other classes (inherited)
+        objSub1.method2( "Sub1", "Hello" );
+        objSub2.method3();
+        System.out.printf( "\n" );
+
+        // Sub3 method
+        objSub3.method2( "Sub3", "Yay" );
+        System.out.printf( "\n" );
+
+        // Builder calls inherited methods + its own message
+        objBuilder.showBuilderStuff();
+        System.out.printf( "\n" );
+
+        // Overloaded calls both inherited and overloaded method2
+        objOverloader.showOverloaderStuff();
+        System.out.printf( "\n" );
+
+        
+        System.out.printf( "\n\n%s\n", "----- Swap Section -----" );
+
+        // Original int array
+        int[] nums = { 784, 5, 123, 56 };
+        System.out.printf( "%s\n", "Before swap: " );
+        printIntArray( nums );
+
+        // Sorting using bubble swap
+        bubbleSwap( nums );
+
+        System.out.printf( "%s\n", "After swap (ascending): " );
+        printIntArray( nums );
+
+
+        System.out.printf( "\n\n%s\n", "----- Sort Section -----" );
+
+        // Character array using full name "BELLEBONDY"
+        char[] name = { 'B', 'E', 'L', 'L', 'E', 'B', 'O', 'N', 'D', 'Y' };
+        System.out.printf( "%s\n", "Before sort: " );
+        printCharArray( name );
+
+        // Sort alphabetically
+        bubbleSort( name );
+
+        System.out.printf( "%s\n", "After sort (alphabetical): ");
+        printCharArray( name );
+
+
+        System.out.printf( "\n\n%s\n", "----- Recursion Section -----" );
+
+        // Factorial of 10
+        int n = 10;
+
+        // Recursive factorial 
+        long result = factorial(n);
+        System.out.printf( "Final result: is %d! = %d\n", n, result );
+
+    } // End of public static void main( String[] args )
+
+
+    // Bubble sort for int array
+    public static void bubbleSwap( int[] arr )
+    {
+
+        // Temp variable for swapping
+        int temp;
+        int k;
+        int j;
+
+        // Outer loop: controls how many passes we do
+        for ( k = 0 ; k < arr.length - 1; k = k + 1 )
+        {
+
+            // Inner loop: compares each pair of adjacent elements
+            for ( j = 0 ; j < arr.length - k - 1 ; j = j + 1 )
+            {
+
+                // If current element is greater than next, swap them
+                if ( arr[j] > arr[j + 1])
+                {
+
+                    temp = arr[j]; // Store current value in temp
+                    arr[j] = arr[j + 1]; // Move next value into current slot
+                    arr[j + 1] = temp; // Put temp (OG value) in next slot
+
+                } // End of if ( arr[j] > arr[j + 1])
+
+            } // End of for ( j = 0 ; j < arr.length - k - 1 ; j = j + 1 )
+
+        } // End of for ( k = 0 ; k < arr.length - 1; k = k + 1 )
+
+    } // End of public static void bubbleSwap( int[] arr )
+
+
+    // Print all elements in int array
+    public static void printIntArray( int[] arr)
+    {
+
+        // Looping through each number in the array using an enhanced for-loop 
+        for ( int val : arr )
+        {
+
+            System.out.printf( "%d ", val );
+
+        } // End of for ( int val : arr )
+
+        System.out.printf("\n");
+
+    } // End of public static void printIntArray( int[] arr)
+
+
+    // Bubble sort for char array (used for name letters) 
+    public static void bubbleSort( char[] arr )
+    {
+
+        // Temp variable for swapping characters
+        char temp;
+        int k;
+        int j;
+
+        // Outer loop: for each pass through the array
+        for ( k = 0 ; k < arr.length - 1 ; k = k + 1 )
+        {
+
+            // Inner loop: compares each pair of adjacent characters
+            for ( j = 0 ; j < arr.length - k - 1 ; j = j + 1 )
+            {
+
+                // If the current character is after the next one alphabetically, swap
+                if ( arr[j] > arr[j + 1] )
+                {
+
+                temp = arr[j]; // Store current character
+                arr[j] = arr[j + 1]; // Shift next char left
+                arr[j + 1] = temp; // Move stored char right
+
+                } // End of if ( arr[j] > arr[j + 1] )
+
+            } // End of for ( j = 0 ; j < arr.length - k - 1 ; j = j + 1 )
+
+        } // End of for ( k = 0 ; k < arr.length - 1 ; k = k + 1 )
+
+    } // End of public static void bubbleSort( char[] arr )
+
+
+    // Print all elements in char array 
+    public static void printCharArray( char[] arr )
+    {
+
+        // Loop through each character in the array using an enhanced for loop
+        for ( char c : arr )
+        {
+
+            System.out.printf( "%c ", c );
+
+        } // End of for ( char c : arr )
+
+        System.out.printf("\n");
+
+    } // End of public static void printCharArray( char[] arr )
+
+
+    // Recursive factorial method with output at each step
+    public static long factorial( int n )
+    {
+
+        // Show which step we're on when entering the method 
+        System.out.printf( "Calling step %d\n", n );
+
+        // Base case: when n is 1, stop recursion and return 1
+        if ( n == 1 )
+        {
+
+            System.out.printf( "Base case reached: 1\n " );
+            return 1; 
+
+        } // End of if ( n == 1 )
+
+        // Recursive step: call factorial again with n - 1
+        long result = n * factorial( n - 1 );
+
+        // On the return, show the calculation from this level
+        System.out.printf( "%d! = %d * %d! = %d\n", n, n, n - 1, result );
+
+        // Return result to previous call 
+        return result;
+
+    } // End of public static long factorial( int n )
+
+} // End of public class bondyBTheDriverPgm4 extends bondyBOverloader
