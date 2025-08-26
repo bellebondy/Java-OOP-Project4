@@ -1,0 +1,25 @@
+/*********************************************************************
+ Author    : Belle Bondy
+ Course    : COP3804 Intermediate Java
+ Professor : Michael Robinson 
+ Program # : COP3804pgm4b_4
+             { This class extends the main Super class (bondyBSuperPgm4
+               and can be used as a base for additional subclasses later 
+               in the program. No methods are overridden here. It's 
+               mainly for practicing inheritance structures. }
+
+ Due Date  : 07/25/2025
+
+
+ Certification: 
+ I hereby certify that this work is my own and none of it is the work of any other person. 
+
+ ..........{ Belle Bondy }..........
+*********************************************************************/
+
+public class bondyBSub1 extends bondyBSuperPgm4
+{
+
+    // No methods -- just inheriting from bondyBSuperPgm4
+
+} // End of public class bondyBSub1 extends bondyBSuperPgm4
