@@ -1,0 +1,44 @@
+/*********************************************************************
+ Author    : Belle Bondy
+ Course    : COP3804 Intermediate Java
+ Professor : Michael Robinson 
+ Program # : COP3804pgm4b_4
+             { This class extends bondyBTheBuilder, which inherits from 
+               Sub 2 and the super class. It overloads method2 by defining 
+               a new version that accepts one string and prints a custom
+               message. }
+
+ Due Date  : 07/25/2025
+
+
+ Certification: 
+ I hereby certify that this work is my own and none of it is the work of any other person. 
+
+ ..........{ Belle Bondy }..........
+*********************************************************************/
+
+public class bondyBOverloader extends bondyBTheBuilder
+{
+
+    // Overloaded version of method2 with a single string argument
+    public void method2( String str )
+    {
+
+        System.out.printf( "%s\n", "Hello I am the Overloader" );
+
+    } // End of public void method2( String str )
+
+
+    // Optional method to demonstrate both versions
+    public void showOverloaderStuff()
+    {
+
+        // This calls the original method2 from the super class
+        method2( "One", "Two" );
+
+        // This calls the overloaded method2 in THIS class 
+        method2( "Just me" );
+
+    } // End of public void showOverloaderStuff()
+
+} // End of public class bondyBOverloader extends bondyBTheBuilder
